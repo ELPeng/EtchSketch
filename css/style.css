@@ -12,15 +12,20 @@
   grid-template-rows: repeat(16, auto);
   width: 960px;
   height: 960px;
+  margin: 0 auto;
 
 }
 .square{
   border: solid black 1px;  
+  background-color: white;
 }
 
-.square:hover{
-  background-color: darkslategrey
+.squareGrey{
+  background-color: darkslategrey 
 }
+/* .square:hover{
+  background-color: darkslategrey
+} */
 
 /******************************************
 /* LAYOUT
