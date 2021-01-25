@@ -1,0 +1,34 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+#parent-grid{
+  display: grid;
+  grid-template-columns: repeat(16, auto);
+  grid-template-rows: repeat(16, auto);
+  width: 960px;
+  height: 960px;
+
+}
+.square{
+  border: solid black 1px;  
+}
+
+.square:hover{
+  background-color: darkslategrey
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
