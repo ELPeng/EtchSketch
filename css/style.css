@@ -3,22 +3,92 @@
 /*******************************************/
 :root{
   --grid-size: 16;
+  --square-color: black;
+  font-family: 'VT323', monospace;
 }
 /* Box Model Hack */
 *{
   box-sizing: border-box;
+
 }
 
 body{
-  background-color: lightsteelblue;
+  background: yellow;
 }
+
+h1{
+  font-size: 70px;
+  text-align: center;
+  color: Black;
+}
+
+button{
+  height: 50px;
+  width: 20%;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  box-shadow: 5px 5px  gray;
+}
+
+button:hover{
+  transform: translate(3px, 3px)
+}
+
+.grid-settings{
+  color: black;
+  width: 600px;
+  margin: 0 auto;
+  padding: 15px 0;
+  font-size: 1.7em;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-settings > *{
+  align-self: center;
+}
+
 .slidecontainer{
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
+.slider {
+  -webkit-appearance: none;  
+  appearance: none;
+  width: 60%; 
+  height: 15px; 
+  background: #d3d3d3; 
+  outline: none; 
+  opacity: 0.7; 
 
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  width: 15px; 
+  height: 15px; 
+  background: black; 
+  cursor: pointer; 
+}
+
+.color-picker{
+  display: flex;
+  flex-direction: column;
+}
+#color-picker{
+  margin-top: 10px;
+  align-self: center;
+}
+
+
+h3{
+  margin: 0;
+}
 #parent-grid{
   display: grid;
   grid-template-columns: repeat(var(--grid-size), 1fr);
@@ -26,15 +96,22 @@ body{
   width: 600px;
   height: 600px;
   margin: 0 auto;
-
+  border: solid black 3px;
+  box-shadow: 4px 4px;
 }
+
 .square{
-  border: solid black 1px;  
+  border: solid rgb(0, 0, 0) 1px;  
+  background-color: white;
+}
+.defaultSquare{
+  background: black;
+}
+.colorSquare{
+  background-color: var(--square-color);
 }
 
-.squareGrey{
-  background-color: darkslategrey 
-}
+
 
 
 /******************************************

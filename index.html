@@ -7,22 +7,30 @@
 
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <h1>Etch-A-Sketch</h1>
-    <div class = "slidecontainer">
-        <div>
+    <div class = "grid-settings">
+        <button id="reset-button">RESET</button>
+        <div class = "slidecontainer">
             <h3>Grid Size</h3>
-            <label for="16">16</label>
-            <input type = "range" min="16" max = "50" value = "16" class = slider id = "gridSize">
-            <label for="100">50</label>
+            <div>
+                <label for="16">16</label>
+                <input type = "range" min="16" max = "50" value = "16" class = slider id = "gridSize">
+                <label for="100">50</label>
+            </div>
+            <span id = "sizeVar">16</span>
         </div>
-        <span id = "sizeVar">16</span>
+        <div class = "color-picker">
+            <h3>Pick a Color:</h3>
+            <input type="color" id = "color-picker" name = "Color" value = "#212F3C"> 
+        </div>
     </div>
-    <div id = "parent-grid">
+    <div id = "parent-grid"></div>
 
-    </div>
-    <button id="reset-button">RESET</button>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
