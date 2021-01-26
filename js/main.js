@@ -15,8 +15,6 @@ for(let i=0; i<cssRuleList.length; i++){
         colorSquareRule = cssRuleList[i]
 }
 
-createGrid()
-
 /* Functions
    ========================================================================== */
 
@@ -62,3 +60,4 @@ function updateColor(){
     colorSquareRule.style.setProperty('--square-color', selectColor.value)
 }
 
+createGrid()
