@@ -104,15 +104,6 @@ h3{
   border: solid rgb(0, 0, 0) 1px;  
   background-color: white;
 }
-.defaultSquare{
-  background: black;
-}
-.colorSquare{
-  background-color: var(--square-color);
-}
-
-
-
 
 /******************************************
 /* LAYOUT

@@ -2,18 +2,10 @@ let gridSize = document.querySelector('#gridSize')
 const parentGrid = document.getElementById('parent-grid')
 const resetGrid = document.getElementById('reset-button')
 const selectColor = document.getElementById('color-picker')
-const cssRuleList = document.styleSheets[1].cssRules
 
 gridSize.addEventListener('input', updateSize)
 resetGrid.addEventListener('click', clearGrid)
-selectColor.addEventListener('input', updateColor)
-
-//Identifies the CSS rule to change the etch color and sets it to variable 'colorSquareRule'
-let colorSquareRule
-for(let i=0; i<cssRuleList.length; i++){
-    if(cssRuleList[i].selectorText == '.colorSquare')
-        colorSquareRule = cssRuleList[i]
-}
+selectColor.addEventListener('input', setEtch)
 
 /* Functions
    ========================================================================== */
@@ -35,12 +27,12 @@ function createGrid(){
 function updateSize(){
     deleteGrid(parentGrid)
     document.getElementById('parent-grid').style.setProperty('--grid-size', gridSize.value)
-    document.getElementById('sizeVar').innerHTML = gridSize.value
+    document.getElementById('sizeVar').innerHTML = `${gridSize.value} x ${gridSize.value}`
     createGrid()
 }
 
 function clearGrid(){
-    document.querySelectorAll('.square').forEach(square => square.classList.remove('colorSquare'))
+    document.querySelectorAll('.square').forEach(square => square.style.setProperty('background-color', 'white'))
 }
 
 function deleteGrid(parent){
@@ -52,12 +44,8 @@ function deleteGrid(parent){
 function setEtch(){
     const squares = document.querySelectorAll('.square')
     Array.from(squares).forEach(square => square.addEventListener('mouseenter', function(){
-        square.classList.add('colorSquare')
+        square.style.setProperty('background-color', selectColor.value)
     })) 
-}
-
-function updateColor(){
-    colorSquareRule.style.setProperty('--square-color', selectColor.value)
 }
 
 createGrid()
