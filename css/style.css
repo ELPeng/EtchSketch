@@ -1,31 +1,41 @@
 /******************************************
 /* CSS
 /*******************************************/
-
+:root{
+  --grid-size: 16;
+}
 /* Box Model Hack */
 *{
   box-sizing: border-box;
 }
+
+body{
+  background-color: lightsteelblue;
+}
+.slidecontainer{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+
 #parent-grid{
   display: grid;
-  grid-template-columns: repeat(16, auto);
-  grid-template-rows: repeat(16, auto);
-  width: 960px;
-  height: 960px;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+  grid-template-rows: repeat(var(--grid-size), 1fr);
+  width: 600px;
+  height: 600px;
   margin: 0 auto;
 
 }
 .square{
   border: solid black 1px;  
-  background-color: white;
 }
 
 .squareGrey{
   background-color: darkslategrey 
 }
-/* .square:hover{
-  background-color: darkslategrey
-} */
+
 
 /******************************************
 /* LAYOUT
